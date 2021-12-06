@@ -43,7 +43,7 @@ from KennedyMusic.helpers.filters import command
 from KennedyMusic.config import DURATION_LIMIT, BOT_USERNAME, BOT_NAME
 
 
-@Client.on_message(filters.command(["song", f"song@{BOT_USERNAME}"]) & ~filters.channel)
+@Client.on_message(filters.command(["is", f"is@{BOT_USERNAME}"]) & ~filters.channel)
 def song(client, message):
     user_id = message.from_user.id
     user_name = message.from_user.first_name
@@ -257,7 +257,7 @@ def time_to_seconds(time):
     return sum(int(x) * 60 ** i for i, x in enumerate(reversed(stringt.split(":"))))
 
 
-@Client.on_message(command(["video", f"video@{BOT_USERNAME}"]))
+@Client.on_message(command(["isl", f"isl@{BOT_USERNAME}"]))
 async def ytmusic(client, message: Message):
     global is_downloading
     if is_downloading:
